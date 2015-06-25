@@ -1,20 +1,26 @@
+'use strict';
+
 import 'normalize.css';
 import './app.styl';
 import angular from 'angular';
-// we need to import
-// other angular modules and
-// register them him
+
+import './components/noteMaker/noteMaker';
+import './components/noteViewer/noteViewer';
+
 angular.module('app', [
   // module dependencies here
+  'noteMaker',
+  'noteViewer'
 ])
-.directive('app', ()=> {
+.directive('app', () => {
   return {
     restrict: 'E',
     replace: true,
     template: `
       <div>
         <note-maker></note-maker>
+        <note-viewer></note-viewer>
       </div>
     `
-  }
-})
+  };
+});

@@ -1,0 +1,8 @@
+<div class="note-viewer" ng-if='nvvm.noteKeeper.notes.length'>
+  <ul>
+    <li autoscroll ng-repeat='note in nvvm.noteKeeper.notes track by $index'>
+    <span>{{note}}</span>
+    <small ng-click='nvvm.remove($index)'>remove</small>
+    </li>
+  </ul>
+</div>
